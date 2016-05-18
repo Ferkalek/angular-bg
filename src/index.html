@@ -1,17 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="listCoursesApi">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Angular background</title>
 
-    <link rel="stylesheet" href="css/vendor.css">
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="vendor.css">
+    <link rel="stylesheet" href="app.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
-<body>
+<body ng-controller="listCoursesCtrl">
 
-<h1>Hello!</h1>
-
-<script src="js/vendor.js"></script>
-<script src="js/app.js"></script>
+<header></header>
+<main>
+    <section class="container">
+        <div class="row">
+            <div class="col-md-offset-4 col-md-4 col-sm-offset-3 col-sm-6 ">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Color</th>
+                        </tr>
+                    <tbody>
+                        <tr ng-repeat="listBG in list.colorsArray">
+                            <td>{{listBG.colorName}}</td>
+                            <td><span class="block-bg" style="background-color: {{listBG.hexValue}}"></span>{{listBG.hexValue}}</td>
+                        </tr>
+                    </tbody>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </section>
+</main>
+<footer></footer>
+<script src="vendor.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
