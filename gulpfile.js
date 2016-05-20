@@ -39,7 +39,7 @@ gulp.task('scriptsApp', function() {
             './src/js/main.js',
         ])
         .pipe(concat('app.js'))
-        //.pipe(uglify())
+        .pipe(uglify())
         .pipe(gulp.dest('./dist'))
         .pipe(reload({stream: true}));
 });

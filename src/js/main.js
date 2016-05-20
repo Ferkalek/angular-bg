@@ -1,5 +1,5 @@
 var listCoursesApi = angular.module("listCoursesApi", []);
 
-listCoursesApi.controller("listCoursesCtrl", function ($scope) {
+listCoursesApi.controller("listCoursesCtrl", ['$scope', function ($scope) {
     $scope.list = arrColorList;
-});
+}]);
